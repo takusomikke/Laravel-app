@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('hello','HelloController@index');
 Route::post('hello','HelloController@post');
+=======
+Route::get('hello', function() {
+            return view('hello.index');
+}) ;
+>>>>>>> 5df0e3d... Add hello/view template
