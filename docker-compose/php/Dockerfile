@@ -14,7 +14,9 @@ RUN apt-get update && apt-get install -y \
     unzip \
     vim \
     sudo \
-    libzip-dev
+    libzip-dev \
+    nodejs \
+    npm
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 

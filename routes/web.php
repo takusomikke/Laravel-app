@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\HelloMiddleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello','HelloController@index')->middleware('hello');
+Auth::routes();
+
+Route::get('hello','HelloController@index')->middleware('auth');
 Route::post('hello','HelloController@post');
 Route::get('hello/add','HelloController@add');
 Route::post('hello/add','HelloController@create');
@@ -47,3 +50,7 @@ Route::get('hello/rest', 'HelloController@rest');
 
 Route::get('hello/session', 'HelloController@ses_get');
 Route::post('hello/session', 'HelloController@ses_put');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
