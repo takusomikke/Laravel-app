@@ -15,7 +15,7 @@ class HelloController extends Controller
     {
         $sort = $request->sort;
         $sort = ($sort ? $sort : "name");
-        $items = Person::orderBy($sort, 'asc')->simplePaginate(5);
+        $items = Person::orderBy($sort, 'asc')->paginate(5);
         return view('hello.index', ['items' => $items, 'sort' => $sort]);
     }
 
